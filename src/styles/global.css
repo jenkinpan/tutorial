@@ -93,3 +93,6 @@ html.dark {
 .dark .blog{
   color: orangered;
 }
+.dark .tag {
+  color: #B80000;
+}
