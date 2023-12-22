@@ -29,9 +29,7 @@ const { posts } = Astro.props;
   <p>包含「{tag}」标签的文章</p>
   <ul>
     {
-      { posts.map((post) => 
-        <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
-      ) }
+      { posts.map((post) => <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />) }
     }
   </ul>
 </BaseLayout>
