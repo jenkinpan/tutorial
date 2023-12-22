@@ -93,6 +93,6 @@ html.dark {
 .dark .blog{
   color: orangered;
 }
-.dark .tag {
+.dark .toggleTag {
   color: #B80000;
 }
