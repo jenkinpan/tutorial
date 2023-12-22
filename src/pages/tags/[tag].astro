@@ -5,14 +5,13 @@ import BlogPost from "../../components/BlogPost.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
-
   const uniqueTags = [
     ...new Set(allPosts.map((post) => post.data.tags).flat()),
   ];
 
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-    post.data.tags.includes(tag)
+      post.data.tags.includes(tag)
     );
     return {
       params: { tag },
@@ -26,10 +25,12 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-  <p>包含「{tag}」标签的文章</p>
+  <p>Posts tagged with {tag}</p>
   <ul>
     {
-      { posts.map((post) => <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />) }
+      posts.map((post) => (
+        <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
+      ))
     }
   </ul>
 </BaseLayout>
