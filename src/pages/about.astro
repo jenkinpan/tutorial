@@ -12,13 +12,28 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
-<html lang="zh">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
+    <style define:vars={{ skillColor, fontWeight, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
   </head>
   <body>
     <a href="/">首页</a>
@@ -32,18 +47,21 @@ const goal = 3;
     <p>以下是关于我的几个事实：</p>
     <ul>
       <li>My name is {identity.firstName}.</li>
-      <li>I live in {identity.country}. My occupation is {identity.occupation}.</li>
+      <li>
+        I live in {identity.country}. My occupation is {identity.occupation}.
+      </li>
       {
         identity.hobbies.length >= 2 && (
           <li>
-            Two hobbies of mine: {identity.hobbies[0]} and {identity.hobbies[1]}.
+            Two hobbies of mine: {identity.hobbies[0]} and {identity.hobbies[1]}
+            .
           </li>
         )
       }
     </ul>
     <p>My skills:</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 
     <!-- * render page according to the condition -->
