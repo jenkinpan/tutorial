@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
-
-const pageTitle = "关于";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="zh">
@@ -13,9 +13,7 @@ const pageTitle = "关于";
     <title>Astro</title>
   </head>
   <body>
-    <a href="/">首页</a>
-    <a href="/about/">{pageTitle}</a>
-    <a href="/blog/">博客</a>
+    <Navigation />
 
     <h1>My Astro WebPage</h1>
     <p>这是我的 Astro 学习笔记</p>
@@ -24,5 +22,6 @@ const pageTitle = "关于";
       <li><a href="/posts/post-2/">文章 2</a></li>
       <li><a href="/posts/post-3/">文章 3</a></li>
     </ul>
+    <Footer />
   </body>
 </html>
