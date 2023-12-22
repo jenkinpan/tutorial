@@ -32,11 +32,11 @@ const goal = 3;
     <p>以下是关于我的几个事实：</p>
     <ul>
       <li>My name is {identity.firstName}.</li>
-      <li>I live in {identity.country}。我的职业是{identity.occupation}。</li>
+      <li>I live in {identity.country}. My occupation is {identity.occupation}.</li>
       {
         identity.hobbies.length >= 2 && (
           <li>
-            Two hobbies of mine: {identity.hobbies[0]} and {identity.hobbies[1]}
+            Two hobbies of mine: {identity.hobbies[0]} and {identity.hobbies[1]}.
           </li>
         )
       }
