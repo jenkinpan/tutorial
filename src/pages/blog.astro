@@ -4,11 +4,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
 const allPosts = await getCollection("posts");
-const pageTtitle = "我的 Astro 学习博客";
+const pageTtitle = "My Astro Learning Journey";
 ---
 
 <BaseLayout pageTitle={pageTtitle}>
-  <p>在这里，我将分享我的学习 Astro 之旅。</p>
+  <p>In this place, I'll share my Astro learning journey.</p>
   <ul>
     {
       allPosts.map((post) => (
